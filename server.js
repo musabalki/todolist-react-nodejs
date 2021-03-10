@@ -2,9 +2,9 @@ const express  = require('express')
 const app = express()
 const port = 3000
 const {v4:uuidv4}=require('uuid')
-
+const cors = require('cors')
 app.use(express.json({extended:false}))
-
+app.use(cors())
 const todos=[
     {
         message:"message 1",
