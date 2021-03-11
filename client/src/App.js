@@ -2,6 +2,7 @@ import './App.css';
 import {useState,useEffect} from 'react'
 import Todos from "./components/Todos"
 import axios from "axios"
+import PreLoader from "./components/PreLoader"
 
 function App() {
   const [todos,setTodos]=useState([])
@@ -12,7 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <Todos todos={todos} />
+      {
+        todos ? <Todos todos={todos} /> : <PreLoader/>
+      }
     </div>
   );
 }
